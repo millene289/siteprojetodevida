@@ -18,17 +18,17 @@ const contadores = document.querySelectorAll(".contador");
 const tempoObjetivo1= new Date("2026-12-10T00:00:00");
 let tempoAtual = new Date();
 
-    contadores[0].textContent=tempoObjetivo1 - tempoAtual;
-    function calculaTempo(tempoObjetivo){
-let tempoAtual = new Date ();
-let temenpoFinal = tempoObjetivo - tempoAtual;
-let segundos = Math.floor(temenpoFinal/1000);
-let minutos = Math.floor(segundos/60)
+contadores[0].textContent=tempoObjetivo1 - tempoAtual;
+function calculaTempo(tempoObjetivo){
+ let tempoAtual = new Date ();
+ let temenpoFinal = tempoObjetivo - tempoAtual;
+ let segundos = Math.floor(temenpoFinal/1000);
+ let minutos = Math.floor(segundos/60)
+ let horas = Math.floor(minutos/60)
+ let dias = Math.floor(horas/24)
 
-
-
-
-
-
-
-    }
+ segundos %= 60;
+ minutos %= 60;
+ horas %= 24;
+return dias + " dias " + " horas " + minutos + " minutos " + segundos + " segundos ";
+}
